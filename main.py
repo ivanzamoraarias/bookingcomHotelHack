@@ -1,12 +1,9 @@
-from selenium import webdriver
-import json
+
 import sys
 import urllib
 import urllib2
 import re
-import dryscrape
-import time
-from selenium import webdriver
+
 from bs4 import BeautifulSoup
 if not sys.argv[1] and not sys.argv[2]:
     print('No existen fechas, no se puede buscar')
