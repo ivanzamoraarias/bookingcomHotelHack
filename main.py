@@ -87,18 +87,18 @@ headers={}
 headers['User-Agent']='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
 
 reqq = urllib2.Request(url,data, headers=headers)
-print('---+++------'+str(reqq))
+#print('---+++------'+str(reqq))
 respp=urllib2.urlopen(reqq)
-print("-------++++---"+str(respp))
+#print("-------++++---"+str(respp))
 respddata= respp.read()
-print('--**-*---'+str(respddata))
+#print('--**-*---'+str(respddata))
 saveFie= open('index.html','w')
 saveFie.write(str(respddata))
 saveFie.close();
 
 parag= re.findall(r'\b(?=\w*[US])\w+\b',respddata)
 '''US$230 + por noche'''
-print(str(parag))
+#print(str(parag))
 soup= BeautifulSoup(str(respddata),"lxml");
 ress= soup.findAll('b')
 print('-----El precio es: -----  '+str(ress[0]).replace('<b>','').replace('</b>',''))
